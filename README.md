@@ -5,7 +5,7 @@
 1. Clone the repository
 
 ```shell
-git clone https://github.com/SivaramPg/pdf-qr-code-extractor.git
+git clone https://github.com/ranjoyghosh88/qr-code-from-png-or-pdf.git
 ```
 
 2. Install the dependencies
