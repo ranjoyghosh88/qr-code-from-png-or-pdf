@@ -1,0 +1,24 @@
+{
+  "name": "pdf-qr-code-extractor",
+  "version": "1.0.0",
+  "description": "Extract QR Codes from PDF Files",
+  "main": "index.js",
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "image-parser": "^1.2.8",
+    "jimp": "^0.16.1",
+    "jsqr": "^1.3.1",
+    "pdf2pic": "^2.1.3",
+    "pngjs": "^6.0.0",
+    "qrcode-reader": "^1.0.4",
+    "react-qr-reader": "^2.2.1",
+    "upng-js": "^2.1.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
