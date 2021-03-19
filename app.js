@@ -6,6 +6,8 @@ var fs = require('fs')
 var QrCode = require('qrcode-reader');
 const { PNG } = require('pngjs');
 const jsQR = require('jsqr');
+const exec = require('child_process').exec;
+const open = require('open');
 
 var Jimp = require("jimp");
 var buffer = fs.readFileSync('./frame (2).png');
@@ -17,3 +19,6 @@ const qrCodeText = code?.data;
 if (!qrCodeText)
   throw new Error('QR Code Text could not be extracted from PNG image');
 console.log('QR Code Text FROM PNG:==> ', qrCodeText);
+open( qrCodeText, function (err) {
+  if ( err ) throw err;    
+});
