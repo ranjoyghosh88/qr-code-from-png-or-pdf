@@ -9,6 +9,7 @@ const open = require('open');
 (async function () {
   try {
     const pdfFilePath = path.resolve(__dirname, './sample.pdf');
+    //const pdfFilePath = path.resolve(__dirname, './invoice_sample.pdf');
 
     /**
      * https://www.npmjs.com/package/pdf2pic
