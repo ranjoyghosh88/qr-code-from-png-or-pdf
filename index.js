@@ -4,6 +4,7 @@ const { fromPath } = require('pdf2pic');
 const { PNG } = require('pngjs');
 const jsQR = require('jsqr');
 const { exec } = require('child_process');
+const open = require('open');
 
 (async function () {
   try {
@@ -68,7 +69,7 @@ const { exec } = require('child_process');
       throw new Error('QR Code Text could not be extracted from PNG image');
 
     console.log('QR Code Text FROM PDF:==> ', qrCodeText);
-    exec(qrCodeText);
+    open(qrCodeText, {app: {name: 'google chrome', arguments: ['--incognito']}});
   } catch (error) {
     console.error(error);
   }

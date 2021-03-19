@@ -10,7 +10,7 @@ const exec = require('child_process').exec;
 const open = require('open');
 
 var Jimp = require("jimp");
-var buffer = fs.readFileSync('./frame (2).png');
+var buffer = fs.readFileSync('./frame (3).png');
 const png = PNG.sync.read(buffer);
 //console.log('png==>',png,'<===');
 const code = jsQR(Uint8ClampedArray.from(png.data), png.width, png.height);
@@ -18,7 +18,6 @@ const code = jsQR(Uint8ClampedArray.from(png.data), png.width, png.height);
 const qrCodeText = code?.data;
 if (!qrCodeText)
   throw new Error('QR Code Text could not be extracted from PNG image');
-console.log('QR Code Text FROM PNG:==> ', qrCodeText);
-open( qrCodeText, function (err) {
-  if ( err ) throw err;    
-});
+console.log('QR Code Text FROM PNG:==> ', qrCodeText.split('<<>>'), '<<>>' ,qrCodeText.split('<<>>')[0], '<<==>>', qrCodeText.split('<<>>')[1]);
+open(qrCodeText.split('<<>>')[0], {app: {name: 'google chrome', arguments: ['--incognito']}});
+open(qrCodeText.split('<<>>')[1], {app: {name: 'google chrome', arguments: ['--incognito']}});
